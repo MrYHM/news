@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block article %}
+    <div class="container">
+        {% for new in news_list %}
+            <div class="row">
+
+                <div class="col-md-1">
+                    <img src="{{ new.image }}" alt="" width="200px" height="150px">
+                </div>
+                <div class="col-md-8 col-md-offset-2">
+                    <p><a href="{{ url_for ("main.detail",pk = new.id) }}">{{ new.title }}</a></p>
+                    <small>{{ new.create_date }}</small>
+
+            </div>
+        </div>
+            <hr>
+        {% endfor %}
+    </div>
+{% endblock %}

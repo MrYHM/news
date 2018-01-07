@@ -1,0 +1,27 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block content %}
+    <div class="container" style="margin-top: 50px">
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="list-group">
+                    <a href="{{ url_for ("main.index") }}" class="list-group-item active">
+                        首页
+                    </a>
+                    <a href="{{ url_for ('admin.news_list') }}" class="list-group-item">
+                        后台首页
+                    </a>
+                    <a href="{{ url_for ("admin.add") }}" class="list-group-item">
+                        新增新闻
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-7">
+                {% block content_page %}
+
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
